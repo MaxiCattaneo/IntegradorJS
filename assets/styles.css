@@ -1,0 +1,142 @@
+/* IMPORTAMOS LA FUENTE */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+:root{
+    --black: #0D1B2A;
+    --dark_blue: #1B263B;
+    --blue: #415A77;
+    --light_blue: #778DA9;
+    --cream: #E0E1DD;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth
+}
+body{
+    width: 100%;
+}
+
+header{
+    position: sticky;
+    top: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: var(--blue);
+    padding: 0 85px 0 50px;
+}
+a{
+    color: black;
+}
+
+header img{
+    width: 10rem;
+}
+
+body{
+    background-color: var(--black);
+    color: var(--cream);
+}
+
+.list_menu{
+    display: flex;
+    gap: 1rem;
+    margin-right: 1rem;
+    font-size: large;
+}
+.menu{
+    display: flex;
+
+}
+
+.main{
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.fa-solid{
+    font-size: larger;
+}
+
+.description-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main_img{
+    width: 27rem;
+    border-radius: 1rem;
+}
+
+.section{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.buttons{
+    display: flex;
+    gap: 2rem;
+}
+
+
+.filter_button{
+    background-color: var(--light_blue);
+    color: var(--cream);
+    height: 2rem;
+    width: 10rem;
+    border-radius: 1rem;
+}
+
+.active{
+    background-color: var(--dark_blue);
+    border-color: var(--cream);
+}
+
+.card{
+    background-color: var(--light_blue);
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card h3{
+    margin: 1rem 0 1rem 0;
+}
+
+.card img{
+    width: 20rem;
+}
+
+.buy_button{
+    background-color: var(--cream);
+    color: var(--dark_blue);
+    height: 2rem;
+    width: 10rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+button:active {
+    color: var(--cream);
+    box-shadow: inset 4px 4px 12px var(--dark_blue),
+                inset -4px -4px 12px var(--dark_blue);
+   }
