@@ -126,6 +126,21 @@ body{
     width: 20rem;
 }
 
+.card-info{
+    display: flex;
+    align-items: center;
+}
+
+.rating{
+    position: absolute;
+    margin-left: 10rem;
+    padding: 2px;
+    border: solid;
+    border-radius: 1rem;
+    border-color: red;
+    background-color: red;
+}
+
 .buy_button{
     background-color: var(--cream);
     color: var(--dark_blue);
