@@ -3,7 +3,8 @@
 
 
 const CreateTask = (player) =>{
-    [nombre, edad, img, rating] = player;
+    const {nombre, edad, img, rating} = player;
+    return
     `
     <li class="card">
         <div class="card-info">
