@@ -22,6 +22,24 @@ const RenderPlayer = (player) =>{
     </div>
     <img src="${img}" alt="Foto de ${nombre}">
     <p>Edad: ${edad}</p>
-    <button class="buy_button">Reclutar</button>
+    <button class="buy_button"
+    data-name='${nombre}'
+    data-img = '${img}'>Reclutar</button>
     </li>`;
 };
+
+
+const renderFilteredProducts = category => {
+  const productsList = Players_list.filter(
+    product => product.category === category
+  );
+  players.innerHTML = productsList.map(RenderPlayer).join('');
+};
+
+
+
+const init = () =>{
+  renderFilteredProducts('arquero');
+};
+
+init();

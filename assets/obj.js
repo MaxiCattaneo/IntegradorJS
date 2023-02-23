@@ -1,4 +1,4 @@
-const Players = [
+const Players_list = [
     {
         id: 1,
         nombre: "Emiliano Martinez",
