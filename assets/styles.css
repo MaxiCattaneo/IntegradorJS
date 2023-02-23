@@ -90,13 +90,13 @@ body{
     gap: 1rem;
 }
 
-.buttons{
+.categories{
     display: flex;
     gap: 2rem;
 }
 
 
-.filter_button{
+.category{
     background-color: var(--light_blue);
     color: var(--cream);
     height: 2rem;
