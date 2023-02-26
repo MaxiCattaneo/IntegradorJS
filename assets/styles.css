@@ -62,6 +62,35 @@ body{
     display: none;
 }
 
+.empty-cart{
+    color: var(--green);
+
+}
+
+.cart-player{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 23rem;
+    background-color: var(--blue);
+    border-radius: 0.5rem;
+}
+
+.cart-player img{
+    margin: 1rem;
+}
+
+.cart-photo{
+    width: 5rem;
+}
+
+.delete-player{
+    background-color: var(--black);
+    margin-left: 2rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
 .cart.active{
     display: flex;
     flex-direction: column;

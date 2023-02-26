@@ -6,6 +6,8 @@ const cartMenu = document.querySelector('.cart');//el carrito
 const cartBtn = document.querySelector('.cart-icon');// boton del carrito
 const barsMenu = document.querySelector('.list_menu');// el menu
 const barsBtn = document.querySelector('.menu-icon');// boton del menu
+const productsCart = document.querySelector('.cart-list');
+const cartTotal = document.querySelector('.cart-total');
 
 // Seteamos el carrito
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -114,6 +116,32 @@ const OpenCart = () =>{
   };
 };
 
+const renderCartPlayer = (player) =>{
+  const {id, nombre, posicion, img} = player;
+  return `
+  <li class="cart-player">
+    <img src="${img}" alt="Foto de ${nombre}" class="cart-photo"
+    <div class="cart-info">
+      <h3>${nombre}</h3>
+      <p>Posicion: ${posicion}</p>
+    </div>
+    <span class="delete-player" data-id=${id}><i class="fa-solid fa-trash"></i></span>
+  </li>`
+}
+
+const renderCart = () =>{
+  if (!cart.length) {
+    productsCart.innerHTML = `<p class="empty-cart">No hay jugadores preseleccionados</p>`;
+    return;
+  }
+  productsCart.innerHTML = cart.map(renderCartPlayer).join('')
+}
+
+const totalCart = () =>{
+  const total = cart.length;
+  cartTotal.innerHTML = `<p>Total de jugadores a reclutar: ${total}</p>`
+}
+
 
 const init = () =>{
   renderPlayers();
@@ -121,6 +149,8 @@ const init = () =>{
   btnLoad.addEventListener('click', BtnVerMasJugadores);
   barsBtn.addEventListener('click', OpenMenu);
   cartBtn.addEventListener('click', OpenCart);
+  document.addEventListener('DOMContentLoaded', renderCart());
+  totalCart();
   console.log('HOLA');
 };
 
