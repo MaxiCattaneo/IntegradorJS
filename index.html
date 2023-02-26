@@ -14,13 +14,35 @@
     <header>
         <img src="./assets/imgs/logol.png" alt="logo">
         <div class="menu">
+            <div class="menu-icon">
+                <i class="fa-solid fa-bars"></i>
+            </div>
             <ul class="list_menu">
-                <a href=""><li>Inicio</li></a>
-                <a href=""><li>Servicios</li></a>
-                <a href=""><li>Contacto</li></a>
+                <a href="#main"><li>Inicio</li></a>
+                <a href="#footer"><li>Contacto</li></a>
+                <a href="login.html"><li><i class="fa-solid fa-user"></i></li></a>
             </ul>
-            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+            <div class="cart-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
         </div>
+
+        <div class="cart">
+            <h2 class="cart-title">Tus jugadores</h2>
+
+            <ul class="cart-list">
+                <!-- aca vienen los jugadores que selecciono el usuario -->
+
+            </ul>
+
+            <div class="cart-total">
+                <p>Total de jugadores a reclutar:</p>
+            </div>
+            <button class="btn-buy">Contactar</button>
+            <button class="btn-delete">Limpiar seleccion</button>
+
+        </div>
+
     </header>
     <main>
         <section class="main" id="hero">
@@ -52,6 +74,7 @@
                     <button class="buy_button">Reclutar</button>
                 </li> -->
             </ul>
+            <button class="btn_loadmore">Ver Mas</button>
         </section>
         <section id="">
 
@@ -61,7 +84,7 @@
 
         </footer>
     </main>
-    <script src="./assets/main.js"></script>
     <script src="./assets/obj.js"></script>
+    <script src="./assets/main.js"></script>
 </body>
 </html>

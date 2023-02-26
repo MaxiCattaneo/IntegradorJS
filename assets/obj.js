@@ -144,3 +144,18 @@ const Players_list = [
         rating: 91,
     },
 ]
+
+const splitProducts = (size) => {
+    let dividedProducts = [];
+    for (let i = 0; i < Players_list.length; i += size)
+      dividedProducts.push(Players_list.slice(i, i + size));
+    return dividedProducts;
+  };
+
+  //Dividimos los productos en arrays de 6 objetos para mostrarlos de a 6
+const productsController = {
+    dividedProducts: splitProducts(6),
+    nextProductsIndex: 1,
+    productsLimit: splitProducts(6).length,
+  };
+  

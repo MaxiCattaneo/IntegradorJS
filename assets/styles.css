@@ -8,6 +8,8 @@
     --blue: #415A77;
     --light_blue: #778DA9;
     --cream: #E0E1DD;
+    --green: #7c9885;
+    --red: #c5979d;
 }
 
 * {
@@ -36,7 +38,7 @@ header{
     background-color: var(--blue);
     padding: 0 85px 0 50px;
 }
-a{
+a, .menu-icon , .cart-icon{
     color: black;
 }
 
@@ -47,6 +49,58 @@ header img{
 body{
     background-color: var(--black);
     color: var(--cream);
+}
+/* footer{
+    background-color: var(--light_blue);
+    width: 100%;
+    padding-top: 1rem;
+} */
+
+
+
+.cart{
+    display: none;
+}
+
+.cart.active{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    width: 30rem;
+    min-height: 35rem;
+    height: auto;
+    top: 7.56rem;
+    right: 0;
+}
+
+.list_menu.active{
+    display: flex;
+    gap: 1rem;
+    background-color: var(--blue);
+    width: 20rem;
+    height: 15rem;
+    position: absolute;
+    top: 7.5rem;
+    right: 0;
+    left: 20rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-left: solid var(--light_blue);
+    border-right: solid var(--light_blue);
+    border-bottom: solid var(--light_blue);
+    border-radius: 0 0 5px 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.menu-icon{
+    margin: 0 1rem 0 1rem;
+    display: none;
 }
 
 .list_menu{
@@ -90,6 +144,12 @@ body{
     gap: 1rem;
 }
 
+.players-container{
+    display: grid;
+    grid-template-columns: repeat(3, 23rem);
+    grid-gap: 10px;
+}
+
 .categories{
     display: flex;
     gap: 2rem;
@@ -116,10 +176,12 @@ body{
     border-radius: 1rem;
     align-items: center;
     gap: 1rem;
+    width: 22rem;
 }
 
 .card h3{
     margin: 1rem 0 1rem 0;
+    grid-column: 2 / 4;
 }
 
 .card img{
@@ -127,14 +189,19 @@ body{
 }
 
 .card-info{
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .rating{
-    position: absolute;
-    margin-left: 10rem;
-    padding: 2px;
+    grid-column: 4 / 5;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    margin: 1rem 0 1rem 1rem;
     border: solid;
     border-radius: 1rem;
     border-color: red;
@@ -149,9 +216,129 @@ body{
     border-radius: 1rem;
     margin-bottom: 1rem;
 }
+/* ------------ FOOTER ----------------- */
+.footer_all{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--light_blue);
+    padding: 0.5rem 0 0.5rem 0;
+}
 
-button:active {
+.info_footer{
+    display: flex;
+    font-size: 15px;
+    flex-direction: column;
+    align-items: flex-start;
     color: var(--cream);
-    box-shadow: inset 4px 4px 12px var(--dark_blue),
-                inset -4px -4px 12px var(--dark_blue);
-   }
+    width: fit-content;
+}
+.footer_icons{
+    display: flex;
+    gap: 0.9rem;
+    font-size: 25px;
+    color: var(--dark_blue);
+    width: fit-content;
+}
+.footer_icons :first-child>:hover{
+    transition: 1s;
+    color: #3b5998;
+}
+.footer_icons :nth-child(2)>:hover{
+    transition: 1s;
+    color: 	#E1306C;
+}
+.footer_icons :last-child>:hover{
+    transition: 1s;
+    color: 	#00acee;
+}
+
+
+/*---------------------------- LOG IN --------------------------------*/
+.login h2{
+    margin-top: 1rem;
+}
+
+
+.back_button{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.login{
+        border-radius: 10px;
+        margin: 5rem 32%; 
+        background-color: var(--blue);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+
+.login_form{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.submit_login_btn{
+    margin-top: 1rem;
+    background-color: var(--light_blue);
+    border-style: none;
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #020A1E;
+    border: 3px solid black;
+}
+
+.new_account_btn{
+    margin-bottom: 1rem;
+    background-color: var(--green);
+    border-style: none;
+    padding: 1rem 1.5rem;
+    border-radius: 2px;
+    font-weight: bold;
+    border: 2px solid var(--cream);
+    border-radius: 0.4em;
+}
+
+.login_form label{
+    width: 80%;
+}
+
+.login_input{
+    background-color: var(--blue);
+    border-bottom: 1px solid var(--red);
+    border-top: unset;
+    border-left: unset;
+    border-right: unset;
+    width: 100%;
+    height: 2rem;
+}
+
+.login_divider{
+    width: 90%;
+    margin: 2rem;
+    height: 3px;
+    background-color: var(--black);
+}
+
+::placeholder{
+    color: var(--cream);
+}
+
+   @media (max-width: 992px){
+    .menu-icon{
+        display: flex;
+    }
+    .list_menu{
+        display: none;
+    }
+   };
