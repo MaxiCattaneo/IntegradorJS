@@ -1,5 +1,5 @@
 const players = document.querySelector('.players-container'); // contenedor de los jugadores
-const categories = document.querySelector('.categories');// 
+const categories = document.querySelector('.categories');// Todas las categorias
 const categoriesList = document.querySelectorAll('.category'); // todas las categorias
 const btnLoad = document.querySelector('.btn_loadmore'); // boton ver mas
 const cartMenu = document.querySelector('.cart');//el carrito
@@ -54,7 +54,7 @@ const renderFilteredProducts = (position) => {
   players.innerHTML = PlayersList.map(RenderPlayer).join('');
 }
 
-
+//Que jugadores renderizar
 const renderPlayers = (index = 0, position = undefined) => { 
   if (!position) {
     renderDividedProducts(index); // si no hay caregoria seleccionada renderiza todos los jugadores
@@ -62,7 +62,7 @@ const renderPlayers = (index = 0, position = undefined) => {
   }
   renderFilteredProducts(position); // Sino muestra solo los de la categoria seleccionada
 };
-
+//Funcion del filtro
 const changeFilterState = (e) => {
   const selectedCategory = e.target.dataset.category;
   const categories = [...categoriesList]
@@ -84,7 +84,6 @@ const changeFilterState = (e) => {
   };
 }
 
-
 // Si se clickea uno de los filtros se aplica
 const aplicarfiltros = (e) =>{
   if(!e. target.classList.contains('category')) return;
@@ -97,15 +96,15 @@ const aplicarfiltros = (e) =>{
     productsController.nextProductsIndex = 1;
   }
 };
-
-const BtnVerMasJugadores = () => { //Que se muestre el ver mas solo hasta que no haya mas jugadores para mostrar
+//Que se muestre el ver mas solo hasta que no haya mas jugadores para mostrar
+const BtnVerMasJugadores = () => { 
   renderPlayers (productsController.nextProductsIndex);
   productsController.nextProductsIndex++;
   if(productsController.nextProductsIndex === productsController.productsLimit){
     btnLoad.classList.add('hidden');
   }
 };
-
+//Funcion para abrir el menu
 const OpenMenu = () =>{
   barsMenu.classList.toggle('active');
   if (cartMenu.classList.contains('active')){
@@ -113,7 +112,7 @@ const OpenMenu = () =>{
     return;
   };
 };
-
+//Funcion para abrir el carrito
 const OpenCart = () =>{
   cartMenu.classList.toggle('active');
   if (barsMenu.classList.contains('active')){
@@ -121,7 +120,7 @@ const OpenCart = () =>{
     return;
   };
 };
-
+//Funcion que cambia la primera letra de un array en mayusculas
 const primeraLetraMayus = (txt) => txt.charAt(0).toUpperCase() + txt.slice(1);
 
 const renderCartPlayer = (player) =>{
@@ -138,21 +137,21 @@ const renderCartPlayer = (player) =>{
     </div>
     <i data-id=${id} class="fa-solid fa-trash delete-player"></i>
   </li>`
-}
-
+};
+//Funcion que da el mensaje que no hay jugadores y sino renderiza jugadores
 const renderCart = () =>{
   if (!cart.length) {
     productsCart.innerHTML = `<p class="empty-cart">No hay jugadores preseleccionados</p>`;
     return;
   }
   productsCart.innerHTML = cart.map(renderCartPlayer).join('')
-}
+};
 
 //SUMA EL TOTAL DE ARTICULOS DEL CARRITO
 const totalCart = () =>{
   const total = cart.length;
   cartTotal.innerHTML = `<p>Total de jugadores a reclutar: ${total}</p>`
-}
+};
 //Funcion para desactivar los botones del carrito cuando esta vacio
 const disableCartBtn = (btn) =>{
   if (!cart.length){
@@ -162,7 +161,7 @@ const disableCartBtn = (btn) =>{
     btn.classList.remove('disabled');
   }
 };
-
+//Checkea la funcionalidad del carrito
 const checkCartState = () =>{
   saveLocalStorage(cart);
   renderCart(cart);
@@ -193,16 +192,6 @@ const playerData = (id, nombre, img, posicion) =>{
   return {id, nombre, img, posicion};
 };
 
-
-// Funcion para desactivar los botones de los jugadores que ya estan en el carrito
-/* const disablePlayerBtn = () =>{
-  if  (cart.find(player =>player.dataId === addBtns.getAttribute('data-id'))){
-    addBtns.classList.add('disabled');
-    return;
-  }
-
-} */
-
 // Modal que se agrego algo nuevo al carrito
 addNewModal = () =>{
   addModal.classList.add('active-modal');
@@ -210,7 +199,6 @@ addNewModal = () =>{
     addModal.classList.remove('active-modal')
   }, 1500);
 };
-
 
 //Funcionalidad boton TACHO
 const funcTrash = e => {
@@ -222,7 +210,7 @@ const funcTrash = e => {
   }
   };
 };
-
+//Funcionalidad para enviar el mensaje arriba del header y el de confirmacion
 const finishCart = (clase, confirmMsg, finishMsg) => {
   if(!cart.length) return;
   if(window.confirm(confirmMsg)){
@@ -230,22 +218,23 @@ const finishCart = (clase, confirmMsg, finishMsg) => {
     lastMsg(clase, finishMsg);
   }
 };
-
+//Funcinalidad reiniciar el carrito
 const resetCart = () =>{
   cart = [];
   checkCartState();
-}
-
+};
+//Funcionalidad comprar todo el carro
 const buyFullCart = () => {
   finishCart('green', "Desea contactar a los jugadores seleccionados?",
    "Los jugadores fueron contactados. Gracias por confiar en nosotros")
 };
-
+//Funcionalidad borrar el carro entero
 const deleteFullCart = () => {
   finishCart('red', "Desea limpiar su seleccion de jugadores?",
    "Su seleccion de jugadores fue descartada")
 };
 
+//Ultimo mensaje cuando que aparece arriba del header
 const lastMsg = (clase, finishMsg) =>{
   topModal.innerHTML = finishMsg;
   topModal.classList.add(clase);
@@ -254,7 +243,7 @@ const lastMsg = (clase, finishMsg) =>{
     topModal.classList.remove('active-top-message')
     topModal.classList.remove(clase);
   }, 3000);
-}
+};
 
 const init = () =>{
   renderPlayers();
@@ -264,18 +253,12 @@ const init = () =>{
   cartBtn.addEventListener('click', OpenCart);
   document.addEventListener('DOMContentLoaded', renderCart());
   document.addEventListener('DOMContentLoaded',totalCart());
-/*   document.addEventListener('DOMContentLoaded',disablePlayerBtn()); */
   players.addEventListener('click', addProduct);
   disableCartBtn(btnBuy);
   disableCartBtn(btnDeleteAll);
   cartMenu.addEventListener('click', funcTrash);
   btnBuy.addEventListener('click', buyFullCart);
   btnDeleteAll.addEventListener ('click', deleteFullCart);
-
-
-
-
-  console.log('HOLA');
 };
 
 init();
