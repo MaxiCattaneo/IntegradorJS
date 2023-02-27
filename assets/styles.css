@@ -264,6 +264,45 @@ body{
     align-items: center;
     gap: 1rem;
 }
+/* ----------------SECCION BENEFICIOS ----------*/
+.beneficios{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+.beneficios h3{
+    margin: 1rem 0 1rem 0;
+}
+.beneficios-cards{
+    display: flex;
+    justify-items: center;
+    gap: 2rem;
+    background-color: var(--blue);
+    width: auto;
+    border-radius: 10px;
+}
+
+.ben-card {
+    width: 190px;
+    height: 254px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0rem 1rem 0 1rem;
+}
+
+.ben-card i{
+    color: black;
+    font-size: 9rem;
+}
+
+.ben-card p{
+    color: black;
+    text-align: center;
+}
 
 .players-container{
     display: grid;
@@ -563,6 +602,12 @@ body{
     .list_menu.active.active li{
         text-decoration: underline;
     }
+    .ben-card i{
+        font-size: 6rem;
+    }
+    .beneficios-cards{
+        width: 70%;
+    }
 }
    
 @media (max-width: 627px){
@@ -589,6 +634,23 @@ body{
         margin-right: 1rem;
         margin-left: 0.5rem;
     }
+    .beneficios-cards{
+        flex-direction: column;
+        width: auto;
+        height: 32rem;
+    }
+    .beneficios-cards :first-child{
+        margin-top: 0.5rem;
+    }
+    .beneficios-cards :last-child{
+        margin-bottom: 0.5rem;
+    }
+    .ben-card i{
+        font-size: 4rem;
+    }
+    .ben-card {
+        gap: 1rem;
+    }
 }
 @media (max-width: 480px){
     .categories{
@@ -596,5 +658,7 @@ body{
     }
    }
 @media (max-width: 450px){
-
+    .categories{
+        grid-template-columns: repeat(5, 38px);
+    }
    }
