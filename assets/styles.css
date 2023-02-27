@@ -36,7 +36,7 @@ header{
     align-items: center;
     width: 100%;
     background-color: var(--blue);
-    padding: 0 85px 0 50px;
+    z-index: 2;
 }
 a, .menu-icon , .cart-icon{
     color: black;
@@ -50,34 +50,92 @@ body{
     background-color: var(--black);
     color: var(--cream);
 }
-/* footer{
-    background-color: var(--light_blue);
+
+.new_user{
+    background-color: var(--green);
+    text-align: center;
+    padding: 20px;
+}
+
+.finish-msg{
+    padding: 15px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cream);
+    position: fixed;
+    top: 0;
     width: 100%;
-    padding-top: 1rem;
-} */
+    transition: all 0.5s ease-out;
+    transform: translateY(-200%);
+    z-index: 1;
+}
 
+.active-top-message{
+    transform: translateY(0);
+    transition: all 0.5s ease-in;
+}
 
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+
+.add-modal {
+    padding: 15px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cream);
+    background-color: green;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transition: all 0.5s ease-out;
+    transform: translateY(200%);
+  }
+.active-modal {
+    transform: translateY(0);
+    transition: all 0.5s ease-in;
+  }
 
 .cart{
     display: none;
 }
 
+.cart-title{
+    margin: 1rem 0 1rem 0;
+}
+
+.cart-list{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 .empty-cart{
     color: var(--green);
-
 }
 
 .cart-player{
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 23rem;
+    justify-content: space-between;
+    gap: 1px;
+    width: 100%;
     background-color: var(--blue);
     border-radius: 0.5rem;
+    padding: 5px;
 }
 
 .cart-player img{
     margin: 1rem;
+}
+.cart-player h3{
+    text-decoration: underline;
 }
 
 .cart-photo{
@@ -86,22 +144,54 @@ body{
 
 .delete-player{
     background-color: var(--black);
-    margin-left: 2rem;
     padding: 0.5rem;
     border-radius: 0.5rem;
+}
+
+.pos-info{
+    font-size: 13px;
 }
 
 .cart.active{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
     position: absolute;
     width: 30rem;
-    min-height: 35rem;
-    height: auto;
+    height: 80vh;
     top: 7.56rem;
     right: 0;
+    overflow-y: scroll;
+    z-index: 3;
+}
+.cart-total p {
+    margin-top: 1rem;
+}
+.btn-buy{
+    width: 100%;
+    height: 40px;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px -20px;
+    cursor: pointer;
+    background-color: var(--green);
+    transition: all 0.2s ease-in-out 0ms;
+}
+
+.btn-delete-all{
+    width: 100%;
+    height: 40px;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px -20px;
+    cursor: pointer;
+    background-color: var(--red);
+    transition: all 0.2s ease-in-out 0ms;
+    margin-bottom: 1rem;
+}
+.btn-buy, .btn-delete-all{
+    margin-top: 1rem;
 }
 
 .list_menu.active{
@@ -202,6 +292,7 @@ body{
     background-color: var(--light_blue);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border-radius: 1rem;
     align-items: center;
     gap: 1rem;
@@ -245,14 +336,34 @@ body{
     border-radius: 1rem;
     margin-bottom: 1rem;
 }
+.disabled {
+    background-color: grey;
+    color: white;
+    cursor: not-allowed;
+    border: none;
+}
+.btn_loadmore{
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  background-color: var(--blue);
+  margin: 1rem 0 2rem 0;
+}
 /* ------------ FOOTER ----------------- */
 .footer_all{
     width: 100%;
     display: flex;
     justify-content: space-around;
     margin: auto;
-    position: absolute;
-    bottom: 0;
     background-color: var(--light_blue);
     padding: 0.5rem 0 0.5rem 0;
 }
@@ -300,7 +411,7 @@ body{
 
 .login{
         border-radius: 10px;
-        margin: 5rem 32%; 
+        margin: 2rem 32%; 
         background-color: var(--blue);
         display: flex;
         flex-direction: column;
@@ -357,6 +468,10 @@ body{
     margin: 2rem;
     height: 3px;
     background-color: var(--black);
+}
+.log_footer{
+    position: absolute;
+    bottom: 0;
 }
 
 ::placeholder{
