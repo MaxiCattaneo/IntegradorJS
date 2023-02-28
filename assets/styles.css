@@ -399,6 +399,51 @@ body{
   background-color: var(--blue);
   margin: 1rem 0 2rem 0;
 }
+/* ---------SECCION CONTACTO------------ */
+.contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+.conctact-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.conctact-form textarea{
+    resize: none;
+    background-color: var(--blue);
+    border: 1px;
+    border-style: solid;
+    border-color: var(--red);
+    width: 496px; 
+    height: 137px;
+}
+.send-form-btn{
+    width: 20%;
+    font-weight: bold;
+    color: black;
+    background-color: var(--green);
+    border: solid 1px black;
+    border-radius: .6rem;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+}
+.contact_input{
+    width: 496px;
+    background-color: var(--blue);
+    border-bottom: 1px solid var(--red);
+    border-top: unset;
+    border-left: unset;
+    border-right: unset;
+    height: 2rem;
+}
 /* ------------ FOOTER ----------------- */
 .footer_all{
     width: 100%;
@@ -651,6 +696,13 @@ body{
     .ben-card {
         gap: 1rem;
     }
+    .contact_input{
+        width: 400px;
+    }
+    .conctact-form textarea{
+        width: 400px;
+    }
+
 }
 @media (max-width: 480px){
     .categories{
