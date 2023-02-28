@@ -225,12 +225,12 @@ const resetCart = () =>{
 };
 //Funcionalidad comprar todo el carro
 const buyFullCart = () => {
-  finishCart('green', "Desea contactar a los jugadores seleccionados?",
+  finishCart('green', "¿Desea contactar a los jugadores seleccionados?",
    "Los jugadores fueron contactados. Gracias por confiar en nosotros")
 };
 //Funcionalidad borrar el carro entero
 const deleteFullCart = () => {
-  finishCart('red', "Desea limpiar su seleccion de jugadores?",
+  finishCart('red', "¿Desea limpiar su seleccion de jugadores?",
    "Su seleccion de jugadores fue descartada")
 };
 
