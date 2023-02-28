@@ -686,7 +686,8 @@ body{
     .beneficios-cards{
         flex-direction: column;
         width: auto;
-        height: 42rem;
+        height: 46rem;
+        justify-content: space-around;
     }
     .beneficios-cards :first-child{
         margin-top: 0.5rem;
