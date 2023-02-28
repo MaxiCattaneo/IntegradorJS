@@ -120,6 +120,17 @@ const OpenCart = () =>{
     return;
   };
 };
+// Funcion para cerrar el carrito y el menu si se scrollea
+const closeOnScroll = () => {
+  if (
+    !barsMenu.classList.contains('active') &&
+    !cartMenu.classList.contains('active')
+  )
+    return;
+
+  barsMenu.classList.remove('active');
+  cartMenu.classList.remove('active');
+};
 //Funcion que cambia la primera letra de un array en mayusculas
 const primeraLetraMayus = (txt) => txt.charAt(0).toUpperCase() + txt.slice(1);
 
@@ -251,6 +262,7 @@ const init = () =>{
   btnLoad.addEventListener('click', BtnVerMasJugadores);
   barsBtn.addEventListener('click', OpenMenu);
   cartBtn.addEventListener('click', OpenCart);
+  window.addEventListener('scroll', closeOnScroll);
   document.addEventListener('DOMContentLoaded', renderCart());
   document.addEventListener('DOMContentLoaded',totalCart());
   players.addEventListener('click', addProduct);
