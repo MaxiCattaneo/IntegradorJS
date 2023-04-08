@@ -36,7 +36,9 @@ header{
     align-items: center;
     width: 100%;
     background-color: var(--blue);
-    padding: 0 85px 0 50px;
+    z-index: 2;
+
+    border-bottom: solid 1px var(--black);
 }
 a, .menu-icon , .cart-icon{
     color: black;
@@ -452,8 +454,6 @@ body{
     display: flex;
     justify-content: space-around;
     margin: auto;
-    position: absolute;
-    bottom: 0;
     background-color: var(--light_blue);
     padding: 0.5rem 0 0.5rem 0;
 }
