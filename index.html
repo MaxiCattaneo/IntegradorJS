@@ -11,15 +11,16 @@
     <title>Football Market</title>
 </head>
 <body>
+    <div class="finish-msg"></div>
     <header>
-        <img src="./assets/imgs/logol.png" alt="logo">
+     <img src="./assets/imgs/logol.png" alt="logo">
         <div class="menu">
             <div class="menu-icon">
                 <i class="fa-solid fa-bars"></i>
             </div>
             <ul class="list_menu">
                 <a href="#main"><li>Inicio</li></a>
-                <a href="#footer"><li>Contacto</li></a>
+                <a href="#contact"><li>Contacto</li></a>
                 <a href="login.html"><li><i class="fa-solid fa-user"></i></li></a>
             </ul>
             <div class="cart-icon">
@@ -48,18 +49,36 @@
                 <!-- <p>Total de jugadores a reclutar:</p> -->
             </div>
             <button class="btn-buy">Contactar</button>
-            <button class="btn-delete">Limpiar seleccion</button>
+            <button class="btn-delete-all">Limpiar seleccion</button>
 
         </div>
 
     </header>
     <main>
-        <section class="main" id="hero">
+        <section class="main" id="main">
             <div class="description-container">
                 <h1>FOOTBALL MARKET</h1>
                 <p>¿Estas armando un equipo y necesitas jugadores?</p>
             </div>
             <img class="main_img" src="./assets/imgs/main.jpg" alt="FOTO FUTBOL">
+        </section>
+
+        <section class="beneficios">
+            <h3>¿Por qué usarias nuestra web?</h3>
+            <div class="beneficios-cards">
+                <div class="ben-card">
+                    <i class="fa-solid fa-bolt"></i>
+                    <p>Porque nuestra página es sencilla de usar</p>
+                </div>
+                <div class="ben-card">
+                    <i class="fa-solid fa-futbol"></i>
+                    <p>Porque amamos el deporte</p>
+                </div>
+                <div class="ben-card">
+                    <i class="fa-solid fa-users"></i>
+                    <p>Porque nos encanta crear grupos</p>
+                </div>
+            </div>
         </section>
         <section class="section">
             <h2>Nuestros jugadores</h2>
@@ -85,13 +104,32 @@
             </ul>
             <button class="btn_loadmore">Ver Mas</button>
         </section>
-        <section id="">
 
+        <section class="contact" id="contact">
+            <h3>Si tenes alguna duda dejanos un mensaje</h3>
+            <form class="conctact-form">
+                <label for="contact" class="email_label">
+                    <input type="emai" class=" contact_input" placeholder="Ingresa tu Email">
+                </label>
+                <textarea name="consult" id="consult" placeholder="Escribe tu consulta"></textarea>
+                <button type="reset" class="send-form-btn">Enviar consulta</button>
+            </form>
         </section>
 
         <footer>
-
+            <div class="footer_all footer_index" id="footer">
+                <div class="info_footer">
+                    <p>© Copyright 2022 - Maximo Cattaneo - Todos los derechos Reservados</p>
+                    <p>CABA, Buenos Aires, Argentina</p>
+                </div>
+                <div class="footer_icons">
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
         </footer>
+        <div class="add-modal">Se agrego el jugador al carrito</div>
     </main>
     <script src="./assets/obj.js"></script>
     <script src="./assets/main.js"></script>
